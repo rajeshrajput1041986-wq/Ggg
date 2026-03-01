@@ -1,115 +1,106 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ateex Cloud - Minecraft Server Hosting</title>
-<style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f5f5f5;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-padding: 20px;
-}
-
-.minecraft-hosting-pill {
-background-color: #3b82f6;
-color: white;
-padding: 8px 16px;
-border-radius: 9999px;
-font-size: 14px;
-font-weight: 600;
-cursor: pointer;
-transition: background-color 0.2s;
-display: flex;
-align-items: center;
-}
-
-.minecraft-hosting-pill:hover {
-background-color: #2563eb;
-}
-
-.minecraft-hosting-pill svg {
-margin-right: 8px;
-fill: currentColor;
-width: 16px;
-height: 16px;
-}
-
-h1 {
-font-size: 3rem;
-font-weight: 700;
-margin: 20px 0;
-color: #1f2937;
-text-align: center;
-}
-
-.hosting-options {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-gap: 16px;
-max-width: 600px;
-width: 100%;
-}
-
-.hosting-option {
-background-color: white;
-border: 1px solid #e5e7eb;
-padding: 24px;
-border-radius: 12px;
-cursor: pointer;
-transition: transform 0.2s, box-shadow 0.2s;
-text-align: center;
-}
-
-.hosting-option:hover {
-transform: translateY(-2px);
-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-border-color: #d1d5db;
-}
-
-.hosting-option h2 {
-font-size: 1.25rem;
-margin-top: 0;
-margin-bottom: 8px;
-color: #374151;
-}
-
-.hosting-option p {
-font-size: 0.875rem;
-color: #6b7280;
-margin-bottom: 0;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A to Z Nodes | Minecraft & VPS Hosting</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<div class="minecraft-hosting-pill">
-<svg viewbox="0 0 16 16"><path d="M11 5h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1v1a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5zm-2 2h-1v1a1 1 0 0 0 1 1h1V7zM6.5 7h-1v1a1 1 0 0 0 1 1h1V7z"></path></svg>
-Minecraft Hosting
-</div>
-<h1>Minecraft Server Hosting</h1>
-<div class="hosting-options">
-<div class="hosting-option">
-<h2>Minecraft Hosting</h2>
-<p>Get your own server now</p>
-</div>
-<div class="hosting-option">
-<h2>VPS Hosting</h2>
-<p>Dedicated resources for your needs</p>
-</div>
-<div class="hosting-option">
-<h2>Web Hosting</h2>
-<p>Host your website with ease</p>
-</div>
-<div class="hosting-option">
-<h2>Bot Hosting</h2>
-<p>Keep your bot running 24/7</p>
-</div>
-</div>
+
+    <!-- Background Animation Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">A to Z <span class="highlight">Nodes</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact" class="btn-login">Client Area</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>High Performance <span class="typing-text">Minecraft & VPS</span> Hosting</h1>
+            <p>Experience lag-free gaming and blazing fast VPS servers with our premium node infrastructure. 99.9% Uptime Guaranteed.</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn-primary">Get Started</a>
+                <a href="#features" class="btn-secondary">View Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Hosting Services</h2>
+        <div class="service-container">
+            <!-- Minecraft Card -->
+            <div class="card">
+                <div class="icon"><i class="fas fa-cube"></i></div>
+                <h3>Minecraft Hosting</h3>
+                <p>Create your own world. Java & Bedrock supported. Instant setup, modpack support, and dedicated IP.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> DDoS Protection</li>
+                    <li><i class="fas fa-check"></i> Free Subdomain</li>
+                    <li><i class="fas fa-check"></i> Unlimited Slots</li>
+                </ul>
+                <a href="#" class="btn-card">Order Now</a>
+            </div>
+
+            <!-- VPS Card -->
+            <div class="card">
+                <div class="icon"><i class="fas fa-server"></i></div>
+                <h3>VPS Hosting</h3>
+                <p>Root access, NVMe SSDs, and powerful CPUs. Perfect for websites, bots, and applications.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> KVM Virtualization</li>
+                    <li><i class="fas fa-check"></i> 1Gbps Uplink</li>
+                    <li><i class="fas fa-check"></i> Automated Backups</li>
+                </ul>
+                <a href="#" class="btn-card">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Stats -->
+    <section id="features" class="features">
+        <div class="feature-box">
+            <i class="fas fa-shield-alt"></i>
+            <h3>DDoS Protection</h3>
+            <p>Advanced mitigation to keep your server safe.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-bolt"></i>
+            <h3>Low Latency</h3>
+            <p>Optimized routes for gaming traffic.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Our team is always here to help you.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 A to Z Nodes. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
