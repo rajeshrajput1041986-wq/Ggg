@@ -3,249 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demon Nodes | Elite Game Hosting</title>
+    <title>Demon Nodes | Premium Game Hosting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #050505; color: white; overflow-x: hidden; }
 
-        /* Loading Screen Animation */
-        #loader {
-            position: fixed;
-            inset: 0;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease-out;
-        }
-        .loader-ring {
-            width: 80px;
-            height: 80px;
-            border: 4px solid #7c3aed;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+        /* Loading Screen */
+        #loader { position: fixed; inset: 0; background: #000; display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.8s; }
+        .loader-ring { width: 60px; height: 60px; border: 4px solid #7c3aed; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Background Particle Animation Container */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-color: #050505;
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+
+        /* Hero Adjustment */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('1000201389.png');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.4s ease;
         }
-        .glass-card:hover {
-            transform: translateY(-10px);
-            border-color: #7c3aed;
-            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
-        }
+        .glass-card:hover { transform: translateY(-10px); border-color: #7c3aed; }
 
-        /* Feature Icons Colors */
-        .icon-ddos { color: #10b981; border: 1px solid #10b981; }
-        .icon-uptime { color: #f59e0b; border: 1px solid #f59e0b; }
-        .icon-support { color: #7c3aed; border: 1px solid #7c3aed; }
-        .icon-hardware { color: #ef4444; border: 1px solid #ef4444; }
-
-        /* Gradient Text */
-        .text-purple-glow {
-            background: linear-gradient(to right, #a855f7, #6366f1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
+        .btn-primary {
+            background: #7c3aed;
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
         }
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(124, 58, 237, 0.5); }
     </style>
 </head>
 <body>
 
-    <div id="loader">
-        <div class="loader-ring"></div>
-    </div>
-
+    <div id="loader"><div class="loader-ring"></div></div>
     <div id="particles-js"></div>
 
-    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/30 backdrop-blur-lg border-b border-white/5">
-        <div class="flex items-center gap-3">
-            <span class="text-2xl font-black uppercase italic tracking-tighter">Demon<span class="text-purple-500">Nodes</span></span>
+    <header class="hero">
+        <div class="bg-white/10 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 border border-white/20">
+            <i class="fas fa-bolt text-purple-500 mr-2"></i> Next-Gen Hosting
         </div>
-        <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
-            <a href="#plans" class="hover:text-white transition">VPS Plans</a>
-            <a href="#features" class="hover:text-white transition">Features</a>
-            <a href="#games" class="hover:text-white transition">Games</a>
-        </div>
-        <a href="#" class="bg-purple-600 px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-purple-700 transition">Login</a>
-    </nav>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter uppercase leading-none">
+            Demon <span class="text-purple-500">Nodes</span>
+        </h1>
+        <p class="text-gray-300 max-w-2xl text-lg mb-10">High-performance game server hosting with low latency and 24/7 support.</p>
+        <a href="#games" class="btn-primary">GET STARTED <i class="fas fa-arrow-right"></i></a>
+    </header>
 
-    <section id="features" class="pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="glass-card p-8 flex items-start gap-5">
-                <div class="p-4 rounded-xl icon-ddos bg-green-500/10">
-                    <i class="fas fa-shield-alt text-2xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">DDoS Protection</h3>
-                    <p class="text-gray-400 text-sm">Enterprise-grade mitigation capable of filtering up to 17Tbps+. Stay online during the most intense volumetric attacks.</p>
-                </div>
+    <section id="games" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-black uppercase">Select Your Game</h2>
+                <div class="relative"><input type="text" placeholder="Search for a game" class="bg-white/5 border border-white/10 px-6 py-2 rounded-lg text-sm w-64"></div>
             </div>
-
-            <div class="glass-card p-8 flex items-start gap-5">
-                <div class="p-4 rounded-xl icon-uptime bg-yellow-500/10">
-                    <i class="fas fa-tachometer-alt text-2xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">99.9% Uptime</h3>
-                    <p class="text-gray-400 text-sm">Tier 3+ certified data centers with redundant power, cooling, and network links to ensure your services never go offline.</p>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 flex items-start gap-5">
-                <div class="p-4 rounded-xl icon-support bg-purple-500/10">
-                    <i class="fas fa-headphones text-2xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
-                    <p class="text-gray-400 text-sm">Real-world experts at your service. Our average response time is under 15 minutes, day or night.</p>
-                </div>
-            </div>
-
-            <div class="glass-card p-8 flex items-start gap-5">
-                <div class="p-4 rounded-xl icon-hardware bg-red-500/10">
-                    <i class="fas fa-microchip text-2xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Powerful Hardware</h3>
-                    <p class="text-gray-400 text-sm">Utilizing latest-gen AMD EPYC/Ryzen processors and enterprise NVMe storage for maximum performance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="plans" class="py-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-black uppercase mb-4">KVM <span class="text-blue-500">VPS</span> Hosting</h2>
-                <p class="text-gray-500 text-sm">High-performance Virtual Private Servers with dedicated resources and root access.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-10">
-                    <h4 class="text-gray-500 font-bold uppercase text-xs mb-4 tracking-widest">Starter Node</h4>
-                    <div class="text-5xl font-black mb-8">$5.00<span class="text-sm text-gray-600">/mo</span></div>
-                    <ul class="space-y-4 mb-10 text-sm text-gray-400">
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 2 vCores (Ryzen 9)</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 4GB DDR4 RAM</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 40GB NVMe SSD</li>
-                    </ul>
-                    <button class="w-full bg-blue-600 py-4 rounded-xl font-bold hover:bg-blue-700 transition">DEPLOY NOW</button>
-                </div>
-
-                <div class="glass-card p-10 border-blue-500 relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Recommended</div>
-                    <h4 class="text-gray-500 font-bold uppercase text-xs mb-4 tracking-widest">Demon Node</h4>
-                    <div class="text-5xl font-black mb-8">$12.00<span class="text-sm text-gray-600">/mo</span></div>
-                    <ul class="space-y-4 mb-10 text-sm text-gray-300">
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 4 vCores (Ryzen 9)</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 8GB DDR4 RAM</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 80GB NVMe SSD</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Advanced DDoS Protection</li>
-                    </ul>
-                    <button class="w-full bg-blue-600 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">DEPLOY NOW</button>
-                </div>
-
-                <div class="glass-card p-10">
-                    <h4 class="text-gray-500 font-bold uppercase text-xs mb-4 tracking-widest">God Node</h4>
-                    <div class="text-5xl font-black mb-8">$25.00<span class="text-sm text-gray-600">/mo</span></div>
-                    <ul class="space-y-4 mb-10 text-sm text-gray-400">
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 8 vCores (Ryzen 9)</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 16GB DDR4 RAM</li>
-                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 160GB NVMe SSD</li>
-                    </ul>
-                    <button class="w-full bg-blue-600 py-4 rounded-xl font-bold hover:bg-blue-700 transition">DEPLOY NOW</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="games" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-black mb-10 uppercase text-center">Supported Games</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="group relative overflow-hidden rounded-3xl h-[250px] glass-card">
-                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=1974&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent p-8 flex flex-col justify-end">
-                        <h3 class="text-2xl font-black uppercase">Minecraft 1.21.11</h3>
-                        <p class="text-sm text-purple-400">Mounts of Mayhem</p>
+                <div class="group relative h-64 rounded-3xl overflow-hidden glass-card">
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold uppercase">Minecraft 1.21.11</h3>
+                        <p class="text-purple-400 text-sm">Mounts of Mayhem</p>
                     </div>
                 </div>
-
-                <div class="group relative overflow-hidden rounded-3xl h-[250px] glass-card">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent p-8 flex flex-col justify-end">
-                        <h3 class="text-2xl font-black uppercase italic">GTA V FiveM</h3>
-                        <p class="text-sm text-blue-400">High Performance Roleplay</p>
+                <div class="group relative h-64 rounded-3xl overflow-hidden glass-card">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold uppercase">Grand Theft Auto V</h3>
+                        <p class="text-blue-400 text-sm">Roleplay Servers</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-8 border-t border-white/5 bg-black/40">
-        <div class="max-w-7xl mx-auto text-center">
-            <span class="text-2xl font-black uppercase italic tracking-tighter">Demon<span class="text-purple-500">Nodes</span></span>
-            <p class="text-gray-500 mt-6 text-sm italic">Premium Hardware • Instant Setup • Lag-Free Experience</p>
-            <div class="flex justify-center gap-10 mt-10">
-                <a href="#" class="text-3xl text-gray-500 hover:text-purple-500 transition"><i class="fab fa-discord"></i></a>
-                <a href="#" class="text-3xl text-gray-500 hover:text-blue-500 transition"><i class="fab fa-twitter"></i></a>
+    <section class="py-20 bg-white/5 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
+            <div class="glass-card p-8 flex gap-5">
+                <div class="text-green-500 text-3xl"><i class="fas fa-shield-alt"></i></div>
+                <div><h4 class="font-bold mb-1">DDoS Protection</h4><p class="text-sm text-gray-400">Filtering up to 17Tbps+ attacks.</p></div>
+            </div>
+            <div class="glass-card p-8 flex gap-5">
+                <div class="text-yellow-500 text-3xl"><i class="fas fa-tachometer-alt"></i></div>
+                <div><h4 class="font-bold mb-1">99.9% Uptime</h4><p class="text-sm text-gray-400">Tier 3+ certified data centers.</p></div>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-16 uppercase italic">KVM VPS <span class="text-purple-500">Nodes</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 border-white/5">
+                    <h5 class="text-xs font-bold text-gray-500 mb-4 tracking-widest uppercase">Starter</h5>
+                    <div class="text-4xl font-black mb-8">$5.00<span class="text-sm text-gray-600">/mo</span></div>
+                    <ul class="text-sm text-gray-400 space-y-4 mb-10"><li>2 vCores</li><li>4GB RAM</li><li>40GB NVMe</li></ul>
+                    <button class="w-full bg-white/5 border border-white/10 py-3 rounded-xl font-bold hover:bg-white/10 transition">DEPLOY</button>
+                </div>
+                <div class="glass-card p-10 border-purple-500/50 bg-purple-500/5 scale-105">
+                    <h5 class="text-xs font-bold text-purple-400 mb-4 tracking-widest uppercase">Demon Node</h5>
+                    <div class="text-4xl font-black mb-8">$12.00<span class="text-sm text-gray-600">/mo</span></div>
+                    <ul class="text-sm text-gray-300 space-y-4 mb-10"><li>4 vCores</li><li>8GB RAM</li><li>80GB NVMe</li></ul>
+                    <button class="w-full bg-purple-600 py-3 rounded-xl font-bold hover:bg-purple-700 transition">DEPLOY</button>
+                </div>
+                <div class="glass-card p-10 border-white/5">
+                    <h5 class="text-xs font-bold text-gray-500 mb-4 tracking-widest uppercase">God Node</h5>
+                    <div class="text-4xl font-black mb-8">$25.00<span class="text-sm text-gray-600">/mo</span></div>
+                    <ul class="text-sm text-gray-400 space-y-4 mb-10"><li>8 vCores</li><li>16GB RAM</li><li>160GB NVMe</li></ul>
+                    <button class="w-full bg-white/5 border border-white/10 py-3 rounded-xl font-bold hover:bg-white/10 transition">DEPLOY</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Loading Screen Animation logic
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 800);
-        });
-
-        // Background Particles Animation configuration
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80 },
-                "color": { "value": "#7c3aed" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3 },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#7c3aed",
-                    "opacity": 0.2,
-                    "width": 1
-                },
-                "move": { "enable": true, "speed": 2 }
-            },
-            "interactivity": {
-                "events": { "onhover": { "enable": true, "mode": "repulse" } }
-            }
-        });
+        window.addEventListener('load', () => { setTimeout(() => { document.getElementById('loader').style.opacity = '0'; setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 800); }, 500); });
+        particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#7c3aed" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#7c3aed", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1 } } });
     </script>
 </body>
 </html>
+
