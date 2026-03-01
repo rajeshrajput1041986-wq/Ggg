@@ -3,104 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A to Z Nodes | Minecraft & VPS Hosting</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Demon Nodes | Ultimate Hosting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section with Minecraft Background */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
+                        url('1000201389.png'); /* */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Glass Pill Badge */
+        .pill-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .price-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+
+        .price-text span { color: #10b981; } /* Green price */
+
+        /* Purple Button Style */
+        .btn-get-started {
+            background: #7c3aed;
+            padding: 16px 45px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-get-started:hover {
+            background: #6d28d9;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Quick Access Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 60px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 15px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #7c3aed;
+        }
+
+        /* Floating Chat Button */
+        .chat-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #e933e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Background Animation Canvas -->
-    <canvas id="canvas"></canvas>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">A to Z <span class="highlight">Nodes</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#contact" class="btn-login">Client Area</a></li>
-        </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-black/10 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center gap-3">
+            <div class="bg-purple-600 p-1.5 rounded-lg">
+                <i class="fas fa-ghost text-white text-lg"></i>
+            </div>
+            <span class="text-xl font-black uppercase tracking-tighter">Demon<span class="text-purple-500">Nodes</span></span>
         </div>
+        <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+            <a href="#" class="hover:text-white transition">Home</a>
+            <a href="#plans" class="hover:text-white transition">VPS Nodes</a>
+            <a href="#" class="hover:text-white transition">Status</a>
+        </div>
+        <button class="text-xs font-bold uppercase border border-purple-500/50 px-5 py-2 rounded-full hover:bg-purple-600 transition">Login</button>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>High Performance <span class="typing-text">Minecraft & VPS</span> Hosting</h1>
-            <p>Experience lag-free gaming and blazing fast VPS servers with our premium node infrastructure. 99.9% Uptime Guaranteed.</p>
-            <div class="cta-buttons">
-                <a href="#services" class="btn-primary">Get Started</a>
-                <a href="#features" class="btn-secondary">View Plans</a>
+    <div class="hero-section">
+        <div class="pill-badge">
+            <i class="fas fa-gamepad text-purple-500"></i> Minecraft Hosting
+        </div>
+
+        <h1 class="main-title">
+            Minecraft Server <br> Hosting
+        </h1>
+
+        <p class="text-gray-400 max-w-xl mb-8 leading-relaxed">
+            High-performance Minecraft server hosting with low latency, DDoS protection, and 24/7 support.
+        </p>
+
+        <div class="price-text">
+            Starting at <span>$1/mo</span>
+        </div>
+
+        <a href="#plans" class="btn-get-started">
+            Get Started <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <div class="service-grid">
+            <div class="service-item">
+                <i class="fas fa-cube text-purple-500"></i> Minecraft Hosting
+            </div>
+            <div class="service-item">
+                <i class="fas fa-server text-blue-500"></i> VPS Hosting
+            </div>
+            <div class="service-item">
+                <i class="fas fa-globe text-green-500"></i> Web Hosting
+            </div>
+            <div class="service-item">
+                <i class="fas fa-robot text-orange-500"></i> Bot Hosting
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Our Hosting Services</h2>
-        <div class="service-container">
-            <!-- Minecraft Card -->
-            <div class="card">
-                <div class="icon"><i class="fas fa-cube"></i></div>
-                <h3>Minecraft Hosting</h3>
-                <p>Create your own world. Java & Bedrock supported. Instant setup, modpack support, and dedicated IP.</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> DDoS Protection</li>
-                    <li><i class="fas fa-check"></i> Free Subdomain</li>
-                    <li><i class="fas fa-check"></i> Unlimited Slots</li>
-                </ul>
-                <a href="#" class="btn-card">Order Now</a>
-            </div>
+    <div class="chat-float">
+        <i class="fas fa-comment"></i>
+    </div>
 
-            <!-- VPS Card -->
-            <div class="card">
-                <div class="icon"><i class="fas fa-server"></i></div>
-                <h3>VPS Hosting</h3>
-                <p>Root access, NVMe SSDs, and powerful CPUs. Perfect for websites, bots, and applications.</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> KVM Virtualization</li>
-                    <li><i class="fas fa-check"></i> 1Gbps Uplink</li>
-                    <li><i class="fas fa-check"></i> Automated Backups</li>
-                </ul>
-                <a href="#" class="btn-card">Order Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features / Stats -->
-    <section id="features" class="features">
-        <div class="feature-box">
-            <i class="fas fa-shield-alt"></i>
-            <h3>DDoS Protection</h3>
-            <p>Advanced mitigation to keep your server safe.</p>
-        </div>
-        <div class="feature-box">
-            <i class="fas fa-bolt"></i>
-            <h3>Low Latency</h3>
-            <p>Optimized routes for gaming traffic.</p>
-        </div>
-        <div class="feature-box">
-            <i class="fas fa-headset"></i>
-            <h3>24/7 Support</h3>
-            <p>Our team is always here to help you.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 A to Z Nodes. All rights reserved.</p>
-            <div class="socials">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
